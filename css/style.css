@@ -20,15 +20,21 @@ html, * {
   }
 
 
-  .box {
-    width: 800px;
-    height: 300px;
-    margin: 0 auto;
-    padding: 5px;
+  #first {
+    width: 600px;
+    height: 400px;
+    position: relative;
     border: 1px solid black;
-    color: black;
   }
 
+  #first #second {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    top: 25%;
+    border: 1px solid black;
+  }
 
   .button {
     margin: 0 auto;
