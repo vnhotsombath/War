@@ -21,6 +21,7 @@ html, * {
 
 
   #first {
+    grid-template-rows: 2fr 3fr;
     width: 600px;
     height: 400px;
     position: relative;
@@ -36,7 +37,19 @@ html, * {
     border: 1px solid black;
   }
 
-  .button {
+  #third {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    top: 25%;
+    border: 1px solid black;  
+  }
+
+  button {
     margin: 0 auto;
+    cursor: grab;
+    width: 100px;
+    height: 100px;
   }
   
