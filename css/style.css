@@ -4,9 +4,6 @@ html, * {
   }
 
   body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
     background-color: white;
     height: 100vh;
     margin: 0;
@@ -19,34 +16,38 @@ html, * {
     text-align: center;
   }
 
-
   #first {
-    grid-template-rows: 2fr 3fr;
     width: 600px;
     height: 400px;
-    position: relative;
+    margin: auto;
     border: 1px solid black;
   }
 
-  #first #second {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    left: 25%;
-    top: 25%;
+  .grid {
+    display: inline-block;
     border: 1px solid black;
+    margin: 1rem;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+  }
+  .grid-box {
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
   }
 
-  #third {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    left: 25%;
-    top: 25%;
-    border: 1px solid black;  
+  .playerScore, .comScore {
+    display: inline-block;
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 1rem 1rem;
+    justify-content: center;
+    align-content: center;
   }
-
-  button {
+  footer {
     margin: 0 auto;
     cursor: grab;
     width: 100px;

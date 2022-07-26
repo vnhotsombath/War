@@ -5,61 +5,87 @@
 /*----- functions -----*/
 
 // start with markup for the basic layout of the UI
-// Listing constants
 //classCard // suit, value
 
-/*----- constants -----*/
-const suits = ['c', 'd', 'h', 's'];
-const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-const game = {
-    players: [
-        {name: 'player', wonDeck:[]},
-        {name: 'computer', wonDeck: []}, 
-    ], 
-    winner: null,
-    deck: [],
-    
-};
-const remainingText = document.getElementById('remaining'); //where can I add this into html
-const deal = document.getElementById('draw');
 
-// Build a 'master' deck of 'card' objects used to create shuffled decks
-const masterDeck = buildMasterDeck();
-renderDeckInContainer(masterDeck, document.getElementById('master-deck-container'));
+//create a new card object with corresponding value and suit for deck
 
-/*----- app's state (variables) -----*/
-let scores;
-let winner;
-let choices;
-let shuffledDeck;
+class Deck{
+  constructor()// this helps to provide custom initialization that must be done before any other methods can be called on an instantiated object. This is a base class, therefore it is empty 
+  {
+    this.deck = [];
+    const suits = ['c', 'd', 'h', 's'];
+    const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-
-/*----- cached element references -----*/
-const playerScoreEl= document.querySelector('#playerScore');
-const comScoreEl= document.querySelector('#comScore');
-const choicesEl= {
-    player: {
-        borderEl: document.querySelector('#playerScore'),
-        imgEl: document.querySelector('#playerScore > img')
-    },
-   computer: {
-        borderEl:document.querySelector('#comScore'),
-        imgEl: document.querySelector('#comScore > img')
+    for (let suit in suits) {
+      for (let value in values) {
+        this.deck.push(`${values[value]} of ${suits[suit]}`);
+      }
     }
+
+  }
 }
-const shuffledContainer = document.getElementById('shuffled-deck-container');
 
-/*----- event listeners -----*/
-document.querySelector('button').addEventListener('click', renderNewShuffledDeck);
+//const deck1= new Deck();
+console.log(deck1.deck);
 
+//shuffle the deck
+shuffle(){
+  const deck = this.deck;
+  let m = deck.length, i;
 
-/*----- functions -----*/
-function getNewShuffledDeck(){
-const tempDeck=[...masterDeck];
-const newShuffledDeck= [];
-while (tempDeck.length) {
-    const rndIdx = Math.floor(Math.random() * tempDeck.length);
+  while(m) {
+    i = Math.floor(Math.random() * m--);
+
+    [deck[m], deck[i]= [deck[i], deck [m]]];
+  }
+  return this;
 }
-return newShuffledDeck;
+
+//deal the card
+deal(){
+  return this.deck.pop();
+}
+
+const deck1 = new Deck();
+deck1.shuffle()
+console.log(deck1.deck);
+deck1.deal()
+console.log(deck1.deck);
+
+//create a reset function that will give players a fresh, random and shuffled set of cards
+class Deck{
+  constructor (){
+    this.deck = [];
+    this.reset();
+    this.shuffle();
+  }
+
+reset(){
+  this.deck = [];
+  const suits = ['c', 'd', 'h', 's'];
+  const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+  for (let suit in suits) {
+    for (let value in values) {
+      this.deck.push(`${values[value]} of ${suits[suit]}`);
+    }
+  }
+
+}
+huffle(){
+  const deck = this.deck;
+  let m = deck.length, i;
+
+  while(m) {
+    i = Math.floor(Math.random() * m--);
+
+    [deck[m], deck[i]= [deck[i], deck [m]]];
+  }
+  return this;
+}
+
+deal(){
+  return this.deck.pop();
+}
 }
 
