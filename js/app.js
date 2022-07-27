@@ -32,11 +32,11 @@ function draw(){
     dealCards(deck);
   }
 
-  attack();
+  battle();
   //console.log('works');
 }
 
-function attack(){
+function battle(){
   if(!gameOver){
     let card1 = players[0].shift();
     let card2 = players[1].shift();
@@ -67,7 +67,6 @@ function checkWinner(card1,card2,pot){
   }
  
 
-
 function showCard(c,p){
   let move = p * 40;
   let bgColor = (c.icon == 'H' || c.icon == 'D') ? 'red' : 'black';
@@ -93,6 +92,17 @@ function buildCards(){
     }
     //console.log(deck);
   }
+}
+
+//shuffle the deck 
+function shuffleArray(array){
+  for(let x = array.length -1;x>0;x--){
+    let ii = Math.floor(Math.random() * (x+1));
+    let temp = array[x];
+    array[x] = array[ii];
+    array [ii] = temp;
+  }
+  return array;
 }
 
 //dealing cards
@@ -122,15 +132,4 @@ function goToWar(pot){
   }
   checkWinner(card1,card2,pot);
   }
-}
-
-//shuffle the deck 
-function shuffleArray(array){
-  for(let x = array.length -1;x>0;x--){
-    let ii = Math.floor(Math.random() * (x+1));
-    let temp = array[x];
-    array[x] = array[ii];
-    array [ii] = temp;
-  }
-  return array;
 }
