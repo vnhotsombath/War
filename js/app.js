@@ -10,10 +10,21 @@
 let playerScore = 0
 let comScore = 0
 const cardsContainer = document.getElementById('cards')
-const dealBtn= document.getElementById('deal-cards')
 const remainingText= document.getElementById('remaining')
 const playerScoreEl = document.getElementById('playerScore')
 const comScoreEl= document.getElementById('comScore')
+let firstRun= true;
+let cards = [];
+let drawButton = document.querySelector('#btnDraw');
+
+//event listeners 
+drawButton.addEventListener('click', draw);
+
+//functions
+function draw(){
+  console.log('works');  
+}; 
+
 
 //create a new card object with corresponding value and suit for deck
 
@@ -64,10 +75,7 @@ shuffle(){
   deck1.deal()
   console.log(deck1.deck);
 
+//dealing the cards
+
+
 //button function
-dealBtn.addEventListener('click', function(event){
-  let keepGoing = drawandPlay();
-  if(!keepGoing) {
-    alert('Game Over');
-  }
-});

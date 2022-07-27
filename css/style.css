@@ -1,56 +1,55 @@
 html, * {
-    font-family: 'Times New Roman';
-    box-sizing: border-box;
-  }
+  font-family: 'Times New Roman';
+  box-sizing: border-box;
+}
 
-  body {
-    background-color: white;
-    height: 100vh;
-    margin: 0;
-  }
+body {
+  background-color: white;
+  height: 100vh;
+  margin: 0;
+}
 
-  header {
-    font-size: 50px;
-    font-weight: 50px;
-    color: #A32C3A;
-    text-align: center;
-  }
+header {
+  font-size: 50px;
+  font-weight: 50px;
+  color: #A32C3A;
+  text-align: center;
+}
 
-  #first {
-    width: 600px;
-    height: 400px;
-    margin: auto;
-    border: 1px solid black;
-  }
+#first {
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  border: 1px solid black;
+}
 
-  .grid {
-    display: inline-block;
-    border: 1px solid black;
-    margin: 1rem;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-  }
-  .grid-box {
-    display: inline-block;
-    vertical-align: middle;
-    border: 1px solid black;
-    justify-content: center;
-    align-content: center;
-  }
+.grid {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 1rem;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+.grid-box {
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid black;
+  justify-content: center;
+  align-content: center;
+}
 
-  .playerScore, .comScore {
-    display: inline-block;
-    border: 1px solid black;
-    margin: 1rem;
-    padding: 1rem 1rem;
-    justify-content: center;
-    align-content: center;
-  }
-  footer {
-    margin: 0 auto;
-    cursor: grab;
-    width: 100px;
-    height: 100px;
-  }
-  
+.playerScore, .comScore {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem 1rem;
+  justify-content: center;
+  align-content: center;
+}
+footer {
+  margin: 0 auto;
+  cursor: grab;
+  width: 100px;
+  height: 100px;
+}
