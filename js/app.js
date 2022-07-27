@@ -21,6 +21,8 @@ let drawButton = document.querySelector('#btnDraw');
 drawButton.addEventListener('click', draw);
 
 //functions
+
+//button function
 function draw(){
   console.log('works');  
 }; 
@@ -78,4 +80,3 @@ shuffle(){
 //dealing the cards
 
 
-//button function
