@@ -3,6 +3,7 @@ body {
   background-image: url('https://i.imgur.com/7pwcP7h.jpeg');
   background-color: white;
   color: black;
+  width: clamp(500px, 100%, 1000px);
 }
 
 header {
@@ -46,7 +47,7 @@ header {
   border-radius: 5px;
   padding: 9px 20px;
   color: white;
-  display: inline-block;
+  margin: auto;
   text-align: center;
 }
 
