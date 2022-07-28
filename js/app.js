@@ -4,7 +4,7 @@
 /*----- event listeners -----*/
 /*----- functions -----*/
 
-// start with markup for the basic layout of the UI
+
 //classCard // suit, value
 /*----- constants -----*/
 const suits = ['d', 'c', 'h', 's'];
@@ -16,6 +16,7 @@ let players = [[],[]];
 let firstRun = true;
 let gameOver = false;
 let drawButton = document.querySelector('#btnDraw');
+let drawButton10 = document.querySelector('#btnDraw10');
 let p1 = document.querySelector('#player .hand');
 let p2 = document.querySelector('#player2 .hand');
 let s1 = document.querySelector('#player .score');
@@ -37,7 +38,6 @@ function buildCards(){
       num: cardFace[n],
       cardValue: parseInt(n) +2, //parseInt parses a string argument and returns an integer
       icon: suit
-
      } 
      deck.push(card);
     }
@@ -97,8 +97,12 @@ function battle(){
 
 function showCard(c,p){
   let move = p * 40;
-  let bgColor = (c.icon == 'H' || c.icon == 'D') ? 'red' : 'black';
-  let bCard = c.num + ' & ' + c.suit + ';';
+  //let bgColor = (c.icon == 'H' || c.icon == 'D') ? 'red' : 'black';
+  let bCard = '<div class="icard '+c.suit+' " style="left:'+move+'px">';
+  bCard += '<div class="cardtop suit">' + c.num + '<br></div>';
+  bCard += '<div class="cardmid suit"></div>';
+  bCard += '<div class="cardbottom suit">' + c.num + '<br></div></div>';
+  console.log(c, move);
   return bCard;
 }
 
