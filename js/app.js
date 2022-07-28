@@ -20,47 +20,13 @@ let p1 = document.querySelector('#player .hand');
 let p2 = document.querySelector('#player2 .hand');
 let s1 = document.querySelector('#player .score');
 let s2 = document.querySelector('#player2 .score');
+let msg; 
 
 // event listners
 drawButton.addEventListener('click', draw);
 
 //functions
-function draw(){
-  if(firstRun){
-    firstRun = false;
-    buildCards();
-    shuffleArray(deck);
-    dealCards(deck);
-  }
-
-  battle();
-  //console.log('works');
-}
-
-function battle(){
-  if(!gameOver){
-    let card1 = players[0].shift();
-    let card2 = players[1].shift();
-    let pot = [card1,card2];
-    //update html
-    p1.innerHTML = showCard(card1,0);
-    p2.innerHTML = showCard(card2,0);
-    //check winners
-    checkWinner(card1,card2,pot);
-    //update scores
-    s1.innerHTML = players[0].length;
-    s2.innerHTML = players[1].length;
-  }
-}
-
-function showCard(c,p){
-  let move = p * 40;
-  let bgColor = (c.icon == 'H' || c.icon == 'D') ? 'red' : 'black';
-  let bCard = c.num + ' & ' + c.suit + ';';
-  console.log(c,move);
-  return bCard;
-}
-
+//create cards to play
 function buildCards(){
   deck = [];
   for(s in suits){
@@ -98,6 +64,43 @@ function dealCards(array){
    players[m].push(array[i]);
   }  
   //console.log(players);
+}
+
+//drawing cards
+function draw(){
+  if(firstRun){
+    firstRun = false;
+    buildCards();
+    shuffleArray(deck);
+    dealCards(deck);
+  }
+
+  battle();
+  //console.log('works');
+}
+
+function battle(){
+  if(!gameOver){
+    let card1 = players[0].shift();
+    let card2 = players[1].shift();
+    let pot = [card1,card2];
+    //update html
+    p1.innerHTML = showCard(card1,0);
+    p2.innerHTML = showCard(card2,0);
+    //check winners
+    checkWinner(card1,card2,pot);
+    //update scores
+    s1.innerHTML = players[0].length;
+    s2.innerHTML = players[1].length;
+  }
+}
+
+function showCard(c,p){
+  let move = p * 40;
+  let bgColor = (c.icon == 'H' || c.icon == 'D') ? 'red' : 'black';
+  let bCard = c.num + ' & ' + c.suit + ';';
+  console.log(c,move);
+  return bCard;
 }
 
 //how to determine the winners
