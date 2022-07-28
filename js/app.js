@@ -20,7 +20,6 @@ let p1 = document.querySelector('#player .hand');
 let p2 = document.querySelector('#player2 .hand');
 let s1 = document.querySelector('#player .score');
 let s2 = document.querySelector('#player2 .score');
-let msg; 
 
 // event listners
 drawButton.addEventListener('click', draw);
@@ -92,7 +91,7 @@ function battle(){
     s1.innerHTML = players[0].length;
     s2.innerHTML = players[1].length;
   }else{
-    console.log('Game Over');
+    outputMessage('Game Over');
   }
 }
 
@@ -100,25 +99,29 @@ function showCard(c,p){
   let move = p * 40;
   let bgColor = (c.icon == 'H' || c.icon == 'D') ? 'red' : 'black';
   let bCard = c.num + ' & ' + c.suit + ';';
-  console.log(c,move);
   return bCard;
 }
 
 //how to determine the winners
+function outputMessage(message){
+  console.log(message);
+  document.getElementById('message').innerHTML = message;
+}
+
 function checkWinner(card1,card2,pot){
   if((players[0].length <= 4) || (players[1].length <= 4)){
     gameOver = true;
     return;
   }
   if(card1.cardValue > card2.cardValue){
-    console.log('hand 1 wins');
+    outputMessage('Player 1 wins');
     players[0] = players[0].concat(pot); //concat - merges 2 or more arrays. Does not change the existing arrays, returns a new array
   } else if(card1.cardValue < card2.cardValue){
-    console.log('hand 2 wins');
+    outputMessage('Computer wins');
     players[0] = players[0].concat(pot);
   } else {
     goToWar(pot);
-    console.log('Go to War');
+    outputMessage('Go to War');
     //console.log('tie'); //enter the war
   }
     //console.log(players);
