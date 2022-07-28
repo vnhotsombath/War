@@ -74,9 +74,8 @@ function draw(){
     shuffleArray(deck);
     dealCards(deck);
   }
-
+//console.log('works');
   battle();
-  //console.log('works');
 }
 
 function battle(){
@@ -92,6 +91,8 @@ function battle(){
     //update scores
     s1.innerHTML = players[0].length;
     s2.innerHTML = players[1].length;
+  }else{
+    console.log('Game Over');
   }
 }
 
@@ -105,7 +106,10 @@ function showCard(c,p){
 
 //how to determine the winners
 function checkWinner(card1,card2,pot){
-  console.log(card1,card2);
+  if((players[0].length <= 4) || (players[1].length <= 4)){
+    gameOver = true;
+    return;
+  }
   if(card1.cardValue > card2.cardValue){
     console.log('hand 1 wins');
     players[0] = players[0].concat(pot); //concat - merges 2 or more arrays. Does not change the existing arrays, returns a new array
@@ -113,9 +117,11 @@ function checkWinner(card1,card2,pot){
     console.log('hand 2 wins');
     players[0] = players[0].concat(pot);
   } else {
-    console.log('tie'); //enter the war
+    goToWar(pot);
+    console.log('Go to War');
+    //console.log('tie'); //enter the war
   }
-    console.log(players);
+    //console.log(players);
   }
 
 // what will happen when there is a tie
