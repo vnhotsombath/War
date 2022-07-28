@@ -16,7 +16,6 @@ let players = [[],[]];
 let firstRun = true;
 let gameOver = false;
 let drawButton = document.querySelector('#btnDraw');
-let drawButton10 = document.querySelector('#btnDraw10');
 let p1 = document.querySelector('#player .hand');
 let p2 = document.querySelector('#player2 .hand');
 let s1 = document.querySelector('#player .score');
@@ -27,44 +26,6 @@ drawButton.addEventListener('click', draw);
 
 //functions
 //create cards to play
-function buildCards(){
-  deck = [];
-  for(s in suits){
-    let suit = suits[s][0].toUpperCase(); //returns value within const suits, 
-    //loop through suits
-    for(n in cardFace){
-     let card = {
-      suit: suits[s],
-      num: cardFace[n],
-      cardValue: parseInt(n) +2, //parseInt parses a string argument and returns an integer
-      icon: suit
-     } 
-     deck.push(card);
-    }
-    //console.log(deck);
-  }
-}
-
-//shuffle the deck 
-function shuffleArray(array){
-  for(let x = array.length -1;x>0;x--){
-    let ii = Math.floor(Math.random() * (x+1));
-    let temp = array[x];
-    array[x] = array[ii];
-    array [ii] = temp;
-  }
-  return array;
-}
-
-//dealing cards
-function dealCards(array){
-  for(let i=0; i<array.length; i++){
-   let m = i % 2;
-   players[m].push(array[i]);
-  }  
-  //console.log(players);
-}
-
 //drawing cards
 function draw(){
   if(firstRun){
@@ -95,23 +56,12 @@ function battle(){
   }
 }
 
-function showCard(c,p){
-  let move = p * 40;
-  //let bgColor = (c.icon == 'H' || c.icon == 'D') ? 'red' : 'black';
-  let bCard = '<div class="icard '+c.suit+' " style="left:'+move+'px">';
-  bCard += '<div class="cardtop suit">' + c.num + '<br></div>';
-  bCard += '<div class="cardmid suit"></div>';
-  bCard += '<div class="cardbottom suit">' + c.num + '<br></div></div>';
-  console.log(c, move);
-  return bCard;
-}
-
-//how to determine the winners
 function outputMessage(message){
-  console.log(message);
+  //console.log(message);
   document.getElementById('message').innerHTML = message;
 }
 
+//how to determine the winners
 function checkWinner(card1,card2,pot){
   if((players[0].length <= 4) || (players[1].length <= 4)){
     gameOver = true;
@@ -122,7 +72,7 @@ function checkWinner(card1,card2,pot){
     players[0] = players[0].concat(pot); //concat - merges 2 or more arrays. Does not change the existing arrays, returns a new array
   } else if(card1.cardValue < card2.cardValue){
     outputMessage('COMPUTER WINS');
-    players[0] = players[0].concat(pot);
+    players[1] = players[1].concat(pot);
   } else {
     goToWar(pot);
     outputMessage('GO TO WAR');
@@ -151,3 +101,53 @@ function goToWar(pot){
   checkWinner(card1,card2,pot);
   }
 }
+
+function showCard(c,p){
+  let move = p * 40;
+  //let bgColor = (c.icon == 'H' || c.icon == 'D') ? 'red' : 'black';
+  let bCard = '<div class="iCard '+c.suit+' " style="left:'+move+'px">';
+    bCard += '<div class="cardtop suit">' + c.num + '<br></div>';
+    bCard += '<div class="cardmid suit"></div>';
+    bCard += '<div class="cardbottom suit">' + c.num + '<br></div></div>';
+  //console.log(c, move);
+    return bCard;
+}
+
+function buildCards(){
+  deck = [];
+  for(s in suits){
+    let suit = suits[s][0].toUpperCase(); //returns value within const suits, 
+    //loop through suits
+    for(n in cardFace){
+     let card = {
+      suit: suits[s],
+      num: cardFace[n],
+      cardValue: parseInt(n) +2, //parseInt parses a string argument and returns an integer
+      icon: suit
+     } 
+     deck.push(card);
+    }
+    //console.log(deck);
+  }
+}
+
+//dealing cards
+function dealCards(array){
+  for(let i=0; i<array.length; i++){
+   let m = i % 2;
+   players[m].push(array[i]);
+  }  
+  //console.log(players);
+}
+
+//shuffle the deck 
+function shuffleArray(array){
+  for(let x = array.length -1;x>0;x--){
+    let ii = Math.floor(Math.random() * (x+1));
+    let temp = array[x];
+    array[x] = array[ii];
+    array [ii] = temp;
+  }
+  return array;
+}
+

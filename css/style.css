@@ -12,6 +12,16 @@ header {
   font-size: 40px;
 }
 
+.h .suit::after { content: '\2665';}
+.s .suit::after { content: '\2660';}
+.c .suit::after { content: '\2663';}
+.d .suit::after { content: '\2666';}
+.s, .c{color:black;}
+.h, .d{color: red;}
+.hand {
+  position: relative;
+}
+
 .players {
   float: left;
   width: 49%;
@@ -27,7 +37,8 @@ header {
   font-size: 1.2em;
   color: white;
   background-color: black;
-  padding: 5px;
+  padding: 2px;
+  
 }
 
 .btn {
@@ -78,18 +89,4 @@ header {
   -o-transform: rotate(-180deg);
 }
 
-.hearts .suit::after{ content: '\2665'; }
-    .spades .suit::after{ content: '\2660'; }
-    .clubs .suit::after{ content: '\2663'; }
-    .diams .suit::after{ content: '\2666'; }
-    .spades, .clubs{color:black;}
-    .hearts, .diams{color:red;}
-    .hand {
-      position: relative;
-    }
-
-
-.hand {
-  position: relative;
-}
 
