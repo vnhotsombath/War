@@ -2,8 +2,7 @@
 body {
   background-image: url('https://i.imgur.com/7pwcP7h.jpeg');
   background-color: white;
-  color: black;
-  width: clamp(500px, 100%, 1000px);
+  color: white;
 }
 
 header {
@@ -37,9 +36,9 @@ header {
 
 #message{
   font-size: 1.2em;
-  color: white;
-  background-color: black;
-  padding: 2px;
+  color: black;
+  background-color: white;
+  padding: 1px;
   
 }
 
