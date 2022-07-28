@@ -16,9 +16,9 @@ let players = [[],[]];
 let firstRun = true;
 let gameOver = false;
 let drawButton = document.querySelector('#btnDraw');
-let p1 = document.querySelector('#player .hand');
+let p1 = document.querySelector('#player1 .hand');
 let p2 = document.querySelector('#player2 .hand');
-let s1 = document.querySelector('#player .score');
+let s1 = document.querySelector('#player1 .score');
 let s2 = document.querySelector('#player2 .score');
 
 // event listners
@@ -104,7 +104,6 @@ function goToWar(pot){
 
 function showCard(c,p){
   let move = p * 40;
-  //let bgColor = (c.icon == 'H' || c.icon == 'D') ? 'red' : 'black';
   let bCard = '<div class="iCard '+c.suit+' " style="left:'+move+'px">';
     bCard += '<div class="cardtop suit">' + c.num + '<br></div>';
     bCard += '<div class="cardmid suit"></div>';

@@ -1,8 +1,6 @@
-* {
-  box-sizing: border-box;
-}
 
 body {
+  background-image: url('https://i.imgur.com/7pwcP7h.jpeg');
   background-color: white;
   color: black;
 }
@@ -10,6 +8,7 @@ body {
 header {
   text-align: center;
   font-size: 40px;
+  color: white;
 }
 
 .h .suit::after { content: '\2665';}
@@ -19,7 +18,7 @@ header {
 .s, .c{color:black;}
 .h, .d{color: red;}
 .hand {
-  position: relative;
+  position: absolute;
 }
 
 .players {
@@ -27,10 +26,12 @@ header {
   width: 49%;
   min-height: 300px;
   border: 1px solid #ddd;
+  color: white;
 }
 
 .score {
   font-size:1.5em;
+  color: white;
 }
 
 #message{
@@ -56,7 +57,7 @@ header {
 .iCard {
   position: absolute;
   padding: 10px;
-  height: 200px;
+  height: 220px;
   width: 150px;
   border: 1px solid black;
   border-radius: 15px;
