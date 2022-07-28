@@ -114,14 +114,14 @@ function checkWinner(card1,card2,pot){
     return;
   }
   if(card1.cardValue > card2.cardValue){
-    outputMessage('Player 1 wins');
+    outputMessage('PLAYER WINS');
     players[0] = players[0].concat(pot); //concat - merges 2 or more arrays. Does not change the existing arrays, returns a new array
   } else if(card1.cardValue < card2.cardValue){
-    outputMessage('Computer wins');
+    outputMessage('COMPUTER WINS');
     players[0] = players[0].concat(pot);
   } else {
     goToWar(pot);
-    outputMessage('Go to War');
+    outputMessage('GO TO WAR');
     //console.log('tie'); //enter the war
   }
     //console.log(players);
