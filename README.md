@@ -1,4 +1,5 @@
-# Game of **War!** ![](https://i.imgur.com/dJ092P3.png)
+# Game of **War!** 
+![](https://i.imgur.com/dJ092P3.png)
 
 ### In this classic card game, the player (you) will play against a computer. 
 
