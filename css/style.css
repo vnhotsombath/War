@@ -56,6 +56,11 @@ header {
   background-color: red;
 }
 
+#btnRestart {
+  background-color: red;
+}
+
+
 .iCard {
   position: absolute;
   padding: 10px;
@@ -94,5 +99,5 @@ header {
 
 .rules {
   text-align: center;
-  font-family: 'Times New Roman';
+  
 }

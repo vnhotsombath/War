@@ -9,13 +9,14 @@
 /*----- constants -----*/
 const suits = ['d', 'c', 'h', 's'];
 const cardFace = ['2','3','4','5','6','7','8','9','10','J','K','Q','A'];
+const drawButton = document.querySelector('#btnDraw');
+const restartButton = document.querySelector('#btnRestart');
 
 /*----- app's state (variables) -----*/
 let deck = [];
 let players = [[],[]];
 let firstRun = true;
 let gameOver = false;
-let drawButton = document.querySelector('#btnDraw');
 let p1 = document.querySelector('#player1 .hand');
 let p2 = document.querySelector('#player2 .hand');
 let s1 = document.querySelector('#player1 .score');
@@ -24,6 +25,12 @@ let message = document.getElementById('message');
 
 // event listners
 drawButton.addEventListener('click', draw);
+
+//in the even that the game is running for long periods of time
+restartButton.addEventListener('click', function(){
+  window.location.reload();
+  return false;
+});
 
 //functions
 //create cards to play
@@ -64,16 +71,16 @@ function battle(){
 
 //how to determine the winners
 function checkWinner(card1,card2,pot){
-  if((players[0].length <= 4) || (players[1].length <= 4)){
+  if(players[0].length <= 4 || (players[1].length <= 4)){
     gameOver = true;
     return;
   }
   if(card1.cardValue > card2.cardValue){
-    message.innerText = 'PLAYER WINS';
+    message.innerText = 'PLAYER WINS!';
     players[0] = players[0].concat(pot); //concat - merges 2 or more arrays. Does not change the existing arrays, returns a new array
   } else if(card1.cardValue < card2.cardValue){
     //outputMessage('COMPUTER WINS');
-    message.innerText = 'COMPUTER WINS';
+    message.innerText = 'COMPUTER WINS!';
     players[1] = players[1].concat(pot);
   } else {
     goToWar(pot);
@@ -151,4 +158,3 @@ function shuffleArray(array){
   }
   return array;
 }
-
