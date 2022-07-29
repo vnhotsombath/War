@@ -22,6 +22,9 @@
 ## When there is a tie:
 ![](https://i.imgur.com/612ZWjT.png)
 
+## Game Over:
+![](https://i.imgur.com/Ez3M4aa.png)
+
 # WIREFRAME:
 ![](https://i.imgur.com/t9qvUNB.png)
 ### Essentially this is how I would like my game to look - my current game is a work in progress and will come back to redesign it to the look I want. 
