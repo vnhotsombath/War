@@ -20,6 +20,7 @@ let p1 = document.querySelector('#player1 .hand');
 let p2 = document.querySelector('#player2 .hand');
 let s1 = document.querySelector('#player1 .score');
 let s2 = document.querySelector('#player2 .score');
+let message = document.getElementById('message');
 
 // event listners
 drawButton.addEventListener('click', draw);
@@ -52,14 +53,14 @@ function battle(){
     s1.innerHTML = players[0].length;
     s2.innerHTML = players[1].length;
   }else{
-    outputMessage('Game Over');
+    message.innerText ='Game Over';
   }
 }
 
-function outputMessage(message){
-  //console.log(message);
-  document.getElementById('message').innerHTML = message;
-}
+// function outputMessage(message){
+//   //console.log(message);
+//   document.getElementById('message').innerHTML = message;
+// }
 
 //how to determine the winners
 function checkWinner(card1,card2,pot){
@@ -68,17 +69,18 @@ function checkWinner(card1,card2,pot){
     return;
   }
   if(card1.cardValue > card2.cardValue){
-    outputMessage('PLAYER WINS');
+    message.innerText = 'PLAYER WINS';
     players[0] = players[0].concat(pot); //concat - merges 2 or more arrays. Does not change the existing arrays, returns a new array
   } else if(card1.cardValue < card2.cardValue){
-    outputMessage('COMPUTER WINS');
+    //outputMessage('COMPUTER WINS');
+    message.innerText = 'COMPUTER WINS';
     players[1] = players[1].concat(pot);
   } else {
     goToWar(pot);
-    outputMessage('GO TO WAR');
+    //outputMessage('GO TO WAR');
     //console.log('tie'); //enter the war
   }
-    //console.log(players);
+    console.log(players);
   }
 
 // what will happen when there is a tie
@@ -126,7 +128,7 @@ function buildCards(){
      } 
      deck.push(card);
     }
-    //console.log(deck);
+    console.log(deck);
   }
 }
 
@@ -136,7 +138,7 @@ function dealCards(array){
    let m = i % 2;
    players[m].push(array[i]);
   }  
-  //console.log(players);
+  console.log(players);
 }
 
 //shuffle the deck 
