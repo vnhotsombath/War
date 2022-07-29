@@ -45,6 +45,8 @@
 
 -[HTML SYMBOLS](https://www.htmlsymbols.xyz/games-symbols)
 
+- Google
+
 # ACKNOWLEDGEMENT
 - Charles Co (TA)
 - Gabriel De Leon
