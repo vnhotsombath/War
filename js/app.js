@@ -72,6 +72,11 @@ function battle(){
 //how to determine the winners
 function checkWinner(card1,card2,pot){
   if(players[0].length <= 4 || (players[1].length <= 4)){
+    if (players[0].length <= 4){
+      players[1] = players[1].concat(pot);
+    } else {
+      players[0] = players [0].concat(pot);
+    }
     gameOver = true;
     return;
   }
