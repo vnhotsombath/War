@@ -80,7 +80,7 @@ function checkWinner(card1,card2,pot){
     //outputMessage('GO TO WAR');
     //console.log('tie'); //enter the war
   }
-    console.log(players);
+    //console.log(players);
   }
 
 // what will happen when there is a tie
@@ -128,7 +128,7 @@ function buildCards(){
      } 
      deck.push(card);
     }
-    console.log(deck);
+    //console.log(deck);
   }
 }
 
@@ -138,7 +138,7 @@ function dealCards(array){
    let m = i % 2;
    players[m].push(array[i]);
   }  
-  console.log(players);
+  //console.log(players);
 }
 
 //shuffle the deck 

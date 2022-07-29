@@ -9,4 +9,4 @@
 
 ### When there is a 'tie' both players deal 4 cards, the last card is put face down and whoever has the highest card, winner takes all.
 
-### First player to 52 wins, or if one player runs out of cards, they automatically lose.
+### First player to 52 wins, or if one player reaches 4 cards, they automatically lose.
