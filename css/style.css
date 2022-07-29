@@ -90,4 +90,7 @@ header {
   -o-transform: rotate(-180deg);
 }
 
-
+.rules {
+  text-align: center;
+  font-family: 'Times New Roman';
+}
