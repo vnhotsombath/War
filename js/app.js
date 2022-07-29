@@ -85,15 +85,15 @@ function checkWinner(card1,card2,pot){
 function goToWar(pot){
   let card1, card2;
   let position = (pot.length/2);
-  if((players[0].length <4) || (players[1].length <4)){
+  if((players[0].length <3) || (players[1].length <3)){
     return;
   } else {
-    for(let i = 0; i < 4; i++){
+    for(let i = 0; i < 3; i++){
       card1 = players[0].shift();
       pot = pot.concat(card1);
       p1.innerHTML += showCard(card1, (position + i));
     }
-    for(let i = 0; i < 4; i++){
+    for(let i = 0; i < 3; i++){
       card2 = players[1].shift();
       pot = pot.concat(card2);
       p2.innerHTML += showCard(card2, (position + i));

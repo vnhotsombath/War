@@ -9,6 +9,8 @@ header {
   text-align: center;
   font-size: 40px;
   color: white;
+  text-shadow: 1px 1px 1px red,
+  2px 2px 1px red;
 }
 
 .h .suit::after { content: '\2665';}
