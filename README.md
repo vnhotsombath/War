@@ -31,7 +31,12 @@
 
 # WIREFRAME:
 ![](https://i.imgur.com/t9qvUNB.png)
-### Essentially this is how I would like my game to look - my current game is a work in progress and will come back to redesign it to the look I want. 
+
+# Improvements: 
+
+### - Essentially this is how I would like my game to look - my current game is a work in progress and will come back to redesign it to the look I want.
+
+### - Edit some of my functions, winning logic, adding playing multiple rounds in one go to quicken up the game.
 
 # SOURCES:
 -[MDN](https://developer.mozilla.org/en-US/)
