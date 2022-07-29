@@ -13,6 +13,7 @@
 ###  &#9831; First player to 52 wins, or if one player reaches 4 cards, they automatically lose.
 
 # Gameplay:
+[Play Demo Game Here!](https://melodic-sprinkles-c76a4d.netlify.app)
 
 ![](https://i.imgur.com/ZTOciss.png)
 
